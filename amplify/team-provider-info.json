@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cookingwithscarlett-dev-51c67-authRole",
+      "UnauthRoleArn": "arn:aws:iam::654654149372:role/amplify-cookingwithscarlett-dev-51c67-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::654654149372:role/amplify-cookingwithscarlett-dev-51c67-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-cookingwithscarlett-dev-51c67-deployment",
+      "UnauthRoleName": "amplify-cookingwithscarlett-dev-51c67-unauthRole",
+      "StackName": "amplify-cookingwithscarlett-dev-51c67",
+      "StackId": "arn:aws:cloudformation:us-east-2:654654149372:stack/amplify-cookingwithscarlett-dev-51c67/e104c7d0-4799-11ef-8e21-0255eb6396c3",
+      "AmplifyAppId": "d1986rvv86rbf1"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d1986rvv86rbf1",
+          "type": "manual"
+        }
+      }
+    }
+  }
+}

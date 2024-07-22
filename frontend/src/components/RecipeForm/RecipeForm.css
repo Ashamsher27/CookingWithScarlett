@@ -1,0 +1,25 @@
+.recipe-form-form-container {
+    margin: 1rem;
+    background-color: rgba(243, 171, 189, 1);
+    color: white;
+    border-radius: .5rem;
+    padding: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.recipe-form-form-button {
+    display: flex;
+    justify-content: space-around;
+    padding-top: .5rem;
+}
+
+#recipe-form-add-button {
+    background-color: rgba(161, 228, 136, 1);
+    /* border-color: white; */
+    border-radius: .5rem;
+}

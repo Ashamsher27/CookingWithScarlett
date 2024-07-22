@@ -1,0 +1,101 @@
+
+
+.pantry-shelf-container {
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: fit-content; /* Fit content width to prevent stretching */
+    box-sizing: border-box;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 6rem;
+} 
+
+.pantry-shelf-ingredient {
+    cursor: pointer; /* Change the cursor to pointer on hover */
+}
+
+.pantry-shelf-ingredient p{
+    margin: 0;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+    font-size: smaller;
+}
+
+
+.pantry-shelf-ingredient img{
+    width: 100px; /* Set the desired width */
+    height: 100px; /* Set the desired height */
+    margin: 0;
+    padding: 0;
+}
+
+.overlay-ingredient {
+    position: absolute;
+    top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.775);
+            color: rgb(0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            border-radius: 5px;
+            z-index: 1;
+
+}
+
+.overlay-content {
+    text-align: center;
+}
+
+#overlay-content-delete-this {
+    padding-bottom: 1rem;
+}
+
+strong{
+    font-size: larger;
+}
+
+
+
+.overlay-content p{
+    font-size: small;
+    padding-bottom: 0;
+}
+
+.overlay-content button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.overlay-content button:hover {
+    background-color: darkred;
+}
+
+
+.scarlett-pantry {
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
+}
+
+.scarlett-pantry img{
+    width: 100%;
+    height: auto;
+    background-size: contain; 
+}

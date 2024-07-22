@@ -1,0 +1,144 @@
+.recipe-list-item-container {
+    margin: 1rem;
+    background-color: white;
+    border-radius: .5rem;
+    padding: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.recipe-list-item-container p.instructions {
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Display ellipses */
+    max-width: 100%; /* Adjust based on your container width */
+  }
+
+  .instructions.truncated {
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Display ellipses */
+    max-width: 100%; /* Adjust based on your container width */
+  }
+  
+  .instructions.full {
+    white-space: normal !important; /* Allow text to wrap */ 
+    overflow: visible !important; /* Show overflowing text */
+  }
+
+  .read-more-text {
+    white-space: normal;
+    color: rgba(18, 67, 255, 1);
+    cursor: pointer;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    font-style: normal;
+    font-size: 10px;
+    display: block;
+  }
+
+  /* .instructions-container {
+    display: flex;
+    flex-direction: row;
+  } */
+
+.recipe-list-form-container-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 1rem;
+    padding-top: .5rem;
+}  
+
+#recipe-list-form-save-button {
+    /* margin-right: 1rem; */
+    font-size: 12px;
+    white-space: nowrap;
+    padding: .5rem;
+    color: white;
+    background-color: rgba(70, 196, 233, 1);
+    /* border: none; */
+    border-radius: .5rem;
+
+}
+#recipe-list-form-cancel-button {
+    /* margin-right: 1rem; */
+    font-size: 12px;
+    white-space: nowrap;
+    padding: .5rem;
+    color: white;
+    background-color: rgba(237, 57, 75, 1);
+    /* border: none; */
+    border-radius: .5rem;
+}
+
+.recipe-list-item-container-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#recipe-list-update-button {
+    /* margin-right: 1rem; */
+    font-size: 12px;
+    white-space: nowrap;
+    padding: .5rem;
+    /* border: none; */
+    border-radius: .5rem;
+    background-color: rgba(161, 228, 136, 1);
+}
+
+#recipe-list-delete-button {
+    /* margin-right: 1rem; */
+    font-size: 12px;
+    white-space: nowrap;
+    padding: .5rem;
+    /* border: none; */
+    border-radius: .5rem;
+    background-color: rgba(237, 57, 75, 1);
+}
+
+.recipe-list-item-container p{
+    margin: 0;
+}
+  
+  .recipe-list-item-overlay {
+    position: fixed; /* Cover the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Ensure the overlay is above other elements */
+  }
+  
+  .recipe-list-item-overlay-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .recipe-list-item-overlay-content p {
+    margin-bottom: 20px;
+  }
+  
+  .recipe-list-item-overlay-content button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: red;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .recipe-list-item-overlay-content button:hover {
+    background-color: darkred;
+  }

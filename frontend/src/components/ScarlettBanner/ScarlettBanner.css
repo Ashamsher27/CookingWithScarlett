@@ -1,0 +1,36 @@
+@keyframes easeInFromTop {
+  to {
+    top: 0;
+  }
+}
+
+.scarlett-banner {
+    position: relative;
+}
+
+.scarlett-banner-imageholder{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(90% - 1rem); /* Adjust width to account for margin */
+  height: auto;
+  padding: 1rem;   
+  z-index: 1;
+  background-color: transparent;
+  top: -100%;
+  animation: easeInFromTop 2s forwards ease-in-out;
+}
+
+.scarlett-banner-imageholder img {
+    width: 100%;
+    height: auto;
+    background-size: contain; 
+    background-repeat: no-repeat;
+    filter: drop-shadow(0rem 0.9rem 0.5rem rgba(31, 31, 31, 0.827));
+}
+    
+.scarlett-banner-placeholder {
+    width: 100%;
+    background-color: transparent;
+    z-index: 0;
+}
