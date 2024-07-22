@@ -9,4 +9,5 @@ mongoose.connect(process.env.MONGO_URI, {
 
 mongoose.set('debug', true); // Enable debugging information
 mongoose.Promise = global.Promise; // Set mongoose's Promise to use Node's Promise
-module.exports.Recipe = require("./recipes")
+module.exports.Recipe = require('./recipes')
+module.exports.Ingredient = require('./ingredients')

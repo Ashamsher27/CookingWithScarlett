@@ -2,5 +2,6 @@
 
 const apiController = require('./apiController');
 const recipeController = require('./recipeController');
+const ingredientController = require('./ingredientController');
 
-module.exports = { apiController, recipeController };
+module.exports = { apiController, recipeController, ingredientController };

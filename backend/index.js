@@ -4,25 +4,37 @@ require('dotenv').config(); // Load environment variables from .env file
 const express = require("express");
 const mongoose = require('mongoose');
 const routes = require('./routes');
+const cors = require("cors")
+const path = require('path')
 
 const app = express();
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3000;
 const db = require("./models/");
 
+// Allow requests from localhost:3001 (your frontend)
+app.use(cors({
+  origin: 'http://localhost:3001',
+}));
+
 app.use(bodyParser.json());
   app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
+
+// Serve static files from 'backendImages' directory
+app.use('/images', express.static(path.join(__dirname, 'backendImages')));
   
   const Recipe = require('./models/recipes'); // Import your existing recipe model
-
+  const Ingredient = require('./models/ingredients')
 
 //Routes
-  const recipeRoutes = require('./routes/recipeRoutes');
-  const apiRoutes = require('./routes/apiRoutes');
+const recipeRoutes = require('./routes/recipeRoutes');
+const apiRoutes = require('./routes/apiRoutes');
+const ingredientRoutes = require('./routes/ingredientRoutes');
 
-  app.use('/recipes', recipeRoutes);
-  app.use('/api', apiRoutes); 
-
+app.use('/recipes', recipeRoutes);
+app.use('/api', apiRoutes); 
+app.use('/ingredientsAPI', ingredientRoutes); 
 
 // MongoDB connection
 mongoose.connect(process.env.MONGO_URI)
@@ -31,17 +43,13 @@ mongoose.connect(process.env.MONGO_URI)
 
     // Event listener for when the connection is established
     mongoose.connection.on('connected', function() {
-      // Log the name of the database
       const dbName = mongoose.connection.client.s.options.dbName;
-      //console.log(`Connected to database: ${dbName}`);
 
-      // Ensure database creation by performing a query
       Recipe.findOne({})
-        .then(async (result) => {
+        .then(async result => {
           if (!result) {
             console.log('No recipes found. Adding dummy recipe...');
 
-            // Add a dummy recipe
             const dummyRecipe = new Recipe({
               recipeName: "Dummy Recipe",
               ingredients: ["dummy ingredient"],
@@ -63,7 +71,7 @@ mongoose.connect(process.env.MONGO_URI)
           });
         })
         .catch((error) => {
-          console.error('Error querying or inserting dummy recipe:', error);
+          console.error('Error inserting dummy recipe:', error);
         });
     });
 
@@ -76,10 +84,6 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((error) => {
     console.error('Database connection error:', error);
   });
-
-
-
-
 
 
 

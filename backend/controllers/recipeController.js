@@ -2,18 +2,18 @@
 
 const Recipe = require('../models/recipes');
 
-const getRecipes = async (req, res) => {
+const getAllRecipes = async (req, res) => {
   try {
     const recipes = await Recipe.find();
     res.json(recipes);
   } catch (error) {
-    console.error('Error fetching recipes from database:', error);
+    console.error('Error getting recipes from database:', error);
     console.log(error);
-    res.status(500).send('Error fetching recipes');
+    res.status(500).send('Error getting recipes');
   }
 };
 
-const addRecipe = async (req, res) => {
+const createRecipe = async (req, res) => {
   const { recipeName, ingredients, cuisine, intolerances, instructions } = req.body;
   try {
     const newRecipe = new Recipe({
@@ -24,10 +24,10 @@ const addRecipe = async (req, res) => {
       instructions,
     });
     await newRecipe.save();
-    res.status(201).send('Recipe added');
+    res.status(201).send('Recipe created!');
   } catch (error) {
-    console.error('Error adding recipe:', error);
-    res.status(500).send('Error adding recipe');
+    console.error('Error creating recipe:', error);
+    res.status(500).send('Error creating recipe');
   }
 };
 
@@ -55,4 +55,4 @@ const deleteRecipe = async (req, res) => {
 };
 
 
-module.exports = { getRecipes, addRecipe, updateRecipe, deleteRecipe };
+module.exports = { getAllRecipes, createRecipe, updateRecipe, deleteRecipe };

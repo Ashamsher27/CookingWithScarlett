@@ -32,21 +32,8 @@ const recipeSchema = new mongoose.Schema({
       type: String,
       required: true,
     },
-
-    // addRecipe: {
-    //   type: Boolean,
-    //   default: false,
-    // },
-
-    // deleteRecipe: {
-    //   type: Boolean, 
-    //   default: false,
-    // }
   });
 
 const recipeModel = mongoose.model("Recipe", recipeSchema) // creating the model from the schema
 
 module.exports = recipeModel // exporting the model
-
-//or??
-//module.exports = mongoose.model('Recipe', recipeSchema);
